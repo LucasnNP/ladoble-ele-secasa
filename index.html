@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Luciana & Lucas | 27 Noviembre 2026</title>
+  </head>
+  <body>
+    <section class="hero">
+      <img src="./assets/logo.PNG" alt="Luciana y Lucas" class="hero__logo" />
+
+      <h1>Luciana & Lucas</h1>
+
+      <p>27 de Noviembre de 2026</p>
+
+      <p class="hero-location">Las Grutas · Río Negro</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Contador regresivo -->
+    <section class="countdown">
+      <h2>Nos vemos en</h2>
+      <div class="countdown-container">
+        <div>
+          <span id="days">0</span>
+          <p>Días</p>
+        </div>
+
+        <div>
+          <span id="hours">0</span>
+          <p>Horas</p>
+        </div>
+
+        <div>
+          <span id="minutes">0</span>
+          <p>Minutos</p>
+        </div>
+
+        <div>
+          <span id="seconds">0</span>
+          <p>Segundos</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Nuestra Historia -->
+    <section class="story">
+      <img src="./assets/historia.jpg" alt="Luciana y Lucas" />
+
+      <div>
+        <h2>Nuestra Historia</h2>
+        <p>Nos conocimos sin buscarlo y elegimos caminar juntos</p>
+        <p>Hoy queremos compartir con ustedes este momento</p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- El Gran Día -->
+    <section class="event">
+      <h2>El gran día</h2>
+
+      <div class="event-grid">
+        <article>
+          <h3>Fecha</h3>
+          <p>27/11/2026</p>
+        </article>
+
+        <article>
+          <h3>Hora</h3>
+          <p>Próximamente</p>
+        </article>
+
+        <article>
+          <h3>Lugar</h3>
+          <p>Las Grutas</p>
+        </article>
+
+        <article class="dress-code-card" onclick="openDressCode()">
+          <h3>Dress Code</h3>
+          <p>Beach elegant</p>
+          <small>Ver recomendaciones</small>
+        </article>
+      </div>
+    </section>
+
+    <div id="dressCodeModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeDressCode()"> &times; </span>
+
+        <h2>Dress Code</h2>
+
+        <p>Elegante, relajado y acorde a una boda frente al mar.</p>
+
+        <div class="dress-gallery">
+          <img
+            src="./assets/dress-code-semiformal.jpeg"
+            alt="Dress code semi formal"
+          />
+
+          <img src="./assets/dress-code-casual.jpeg" alt="Dress code casual" />
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Cómo llegar -->
+    <section class="location">
+      <h2>Cómo llegar</h2>
+
+      <p>Frente al mar, Las Grutas.</p>
+
+      <a href="#" target="_blank" class="btn"> Ver ubicación </a>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Playlist -->
+    <section class="playlist">
+      <h2>🎵 Nuestra Playlist</h2>
+      <p>Ayudanos a crear la banda sonora de nuestra fiesta.</p>
+      <p>Que temazos no pueden faltar??</p>
+
+      <iframe
+        style="border-radius: 12px"
+        src="https://open.spotify.com/embed/playlist/0zD7S0Ti6tfRekIWktqkh5"
+        width="100%"
+        height="352"
+        frameborder="0"
+        allowfullscreen=""
+        loading="lazy"
+      >
+      </iframe>
+
+      <a
+        href="https://open.spotify.com/playlist/0zD7S0Ti6tfRekIWktqkh5?si=06v1-vmJQUe3JqWJ4l1E_Q&pt=d02898fee83dd5ffd9a49991bd062bfd&pi=0d0Y1fvkQh2qh"
+        target="_blank"
+        class="btn"
+      >
+        Agregar canciones
+      </a>
+
+      <p>
+        Queremos bailar las canciones que forman parte de sus historias también.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Confirmación -->
+    <section class="rsvp">
+      <h2>Confirmar asistencia</h2>
+
+      <p>Tu presencia es nuestro mejor regalo.</p>
+
+      <a
+        href="https://wa.me/5492920356386"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn"
+      >
+        Confirmar por WhatsApp
+      </a>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <h3>Nos vemos frente al mar ♡</h3>
+        <p>Mientras tanto, acompañanos en los preparativos.</p>
+
+        <a
+          href="https://www.instagram.com/ladoble.ele.secasa/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="instagram-link"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+
+      <div class="copyright">
+        © 2026 Todos los derechos reservados · Diseñado y desarrollado por
+        <a
+          href="https://github.com/LucasnNP"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="github-link"
+        >
+          lucasnp_dev
+        </a>
+      </div>
+    </footer>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
