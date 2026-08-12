@@ -43,3 +43,21 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navbarLinks = document.querySelector(".navbar-links");
+
+menuToggle.addEventListener("click", () => {
+  navbarLinks.classList.toggle("active");
+  const isOpen = navbarLinks.classList.contains("active");
+  menuToggle.textContent = isOpen ? "✕" : "☰";
+  menuToggle.setAttribute("aria-expanded", isOpen);
+});
+
+navbarLinks.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navbarLinks.classList.remove("active");
+    menuToggle.textContent = "☰";
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
