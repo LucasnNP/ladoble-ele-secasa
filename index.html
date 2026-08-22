@@ -17,6 +17,22 @@
     <title>Luciana & Lucas | 27 Noviembre 2026</title>
   </head>
   <body>
+    <!-- Video de fondo: reemplazá el src por tu archivo en /assets -->
+    <div class="bg-video-wrap">
+      <video
+        class="bg-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="./assets/video-poster.jpg"
+      >
+        <source src="./assets/video-anuncio.mp4" type="video/mp4" />
+      </video>
+      <div class="bg-video-overlay"></div>
+    </div>
+
     <nav class="navbar">
       <div class="navbar-logo">L&L</div>
 
@@ -32,6 +48,7 @@
       <ul class="navbar-links">
         <li><a href="#story">Historia</a></li>
         <li><a href="#event">Gran Día</a></li>
+        <li><a href="#gallery">Galería</a></li>
         <li><a href="#playlist">Playlist</a></li>
         <li><a href="#rsvp">RSVP</a></li>
       </ul>
@@ -95,22 +112,29 @@
       <h2>El gran día</h2>
 
       <div class="event-grid">
-        <article>
+        <article class="info-card">
+          <i class="fa-solid fa-calendar-days info-card__icon"></i>
           <h3>Fecha</h3>
           <p>27/11/2026</p>
         </article>
 
-        <article>
+        <article class="info-card">
+          <i class="fa-regular fa-clock info-card__icon"></i>
           <h3>Hora</h3>
           <p>Próximamente</p>
         </article>
 
-        <article>
+        <article class="info-card">
+          <i class="fa-solid fa-location-dot info-card__icon"></i>
           <h3>Lugar</h3>
           <p>Las Grutas</p>
         </article>
 
-        <article class="dress-code-card" onclick="openDressCode()">
+        <article
+          class="info-card info.card--clickable"
+          onclick="openModal('dressCodeModal')"
+        >
+          <i class="fa-solid fa-shirt info.info-card__icon"></i>
           <h3>Dress Code</h3>
           <p>Beach elegant</p>
           <small>Ver recomendaciones</small>
@@ -120,19 +144,47 @@
 
     <div id="dressCodeModal" class="modal">
       <div class="modal-content">
-        <span class="close" onclick="closeDressCode()"> &times; </span>
+        <span class="close" onclick="closeModal('dessCodeModal')">
+          &times;
+        </span>
 
         <h2>Dress Code</h2>
 
         <p>Elegante, relajado y acorde a una boda frente al mar.</p>
 
-        <div class="dress-gallery">
-          <img
-            src="./assets/dress-code-semiformal.jpeg"
-            alt="Dress code semi formal"
-          />
+        <div class="carousel-wrap">
+          <div class="carousel">
+            <button
+              class="carousel__arrow carousel__arrow--prev"
+              aria-label="Anterior"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
 
-          <img src="./assets/dress-code-casual.jpeg" alt="Dress code casual" />
+            <div class="carousel__track">
+              <div class="carousel__slide">
+                <img
+                  src="./assets/dress-code-semiformal.jpeg"
+                  alt="Dress code semi formal"
+                />
+              </div>
+              <div class="carousel__slide">
+                <img
+                  src="./assets/dress-code-casual.jpeg"
+                  alt="Dress code casual"
+                />
+              </div>
+            </div>
+
+            <button
+              class="carousel__arrow carousel__arrow--next"
+              aria-label="Siguiente"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <div class="carousel__dots"></div>
         </div>
       </div>
     </div>
@@ -146,6 +198,49 @@
       <p>Frente al mar, Las Grutas.</p>
 
       <a href="#" target="_blank" class="btn"> Ver ubicación </a>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Galería -->
+    <section id="gallery" class="gallery fade-in">
+      <h2>Retratos de nuestro amor</h2>
+      <p>La clave es disfrutar cada momento</p>
+
+      <div class="carousel-wrap">
+        <div class="carousel">
+          <button
+            class="carousel__arrow carousel__arrow--prev"
+            aria-label="Anterior"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <div class="carousel__track">
+            <div class="carousel__slide">
+              <img src="./assets/gallery-1.jpg" alt="Foto pareja 1" />
+            </div>
+            <div class="carousel__slide">
+              <img src="./assets/gallery-2.jpg" alt="Foto pareja 2" />
+            </div>
+            <div class="carousel__slide">
+              <img src="./assets/gallery-3.jpg" alt="Foto pareja 3" />
+            </div>
+            <div class="carousel__slide">
+              <img src="./assets/gallery-4.jpg" alt="Foto pareja 4" />
+            </div>
+          </div>
+
+          <button
+            class="carousel__arrow carousel__arrow--next"
+            aria-label="Siguiente"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="carousel__dots"></div>
+      </div>
     </section>
 
     <div class="divider"></div>
