@@ -115,6 +115,27 @@ function initCarousel() {
 
 initCarousel();
 
+// Botón de música de fondo — no autoplay, arranca con el primer toque
+// del usuario (los navegadores bloquean el sonido automático).
+const musicToggle = document.getElementById("musicToggle");
+const bgMusic = document.getElementById("bgMusic");
+
+if (musicToggle && bgMusic) {
+  musicToggle.addEventListener("click", () => {
+    if (bgMusic.paused) {
+      bgMusic.play().catch(() => {});
+      musicToggle.classList.add("is-playing");
+      musicToggle.setAttribute("aria-pressed", "true");
+      musicToggle.setAttribute("aria-label", "Pausar música");
+    } else {
+      bgMusic.pause();
+      musicToggle.classList.remove("is-playing");
+      musicToggle.setAttribute("aria-pressed", "false");
+      musicToggle.setAttribute("aria-label", "Reproducir música");
+    }
+  });
+}
+
 // Asegura que el video de fondo arranque en navegadores donde el
 // autoplay con sonido está bloqueado (ya va muted, pero por las dudas
 // forzamos el play en el primer toque en mobile).

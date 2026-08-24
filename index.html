@@ -17,7 +17,7 @@
     <title>Luciana & Lucas | 27 Noviembre 2026</title>
   </head>
   <body>
-    <!-- Video de fondo: reemplazá el src por tu archivo en /assets -->
+    <!-- Video de fondo -->
     <div class="bg-video-wrap">
       <video
         class="bg-video"
@@ -32,6 +32,26 @@
       </video>
       <div class="bg-video-overlay"></div>
     </div>
+
+    <!-- Música de fondo:
+         No arranca sola (los navegadores bloquean el autoplay con sonido);
+         el invitado la prende tocando el botón. -->
+    <audio
+      id="bgMusic"
+      src="./assets/musica-fondo.mp3"
+      loop
+      preload="none"
+    ></audio>
+
+    <button
+      id="musicToggle"
+      class="music-toggle"
+      type="button"
+      aria-label="Reproducir música"
+      aria-pressed="false"
+    >
+      <i class="fa-solid fa-music"></i>
+    </button>
 
     <nav class="navbar">
       <div class="navbar-logo">L&L</div>
@@ -195,9 +215,15 @@
     <section class="location fade-in">
       <h2>Cómo llegar</h2>
 
-      <p>Frente al mar, Las Grutas.</p>
+      <p>Complejo Las Piedritas, Las Grutas, R.N.</p>
 
-      <a href="#" target="_blank" class="btn"> Ver ubicación </a>
+      <a
+        href="https://maps.app.goo.gl/Bb5HRBwesWSf5fnk6"
+        target="_blank"
+        class="btn"
+      >
+        Ver ubicación
+      </a>
     </section>
 
     <div class="divider"></div>

@@ -112,8 +112,7 @@ p {
 }
 
 /* VIDEO DE FONDO */
-/* Reemplazá ./assets/video-anuncio.mp4 por el archivo real.
-   El overlay controla el contraste: subí/bajá la opacidad si el texto
+/* El overlay controla el contraste: subí/bajá la opacidad si el texto
    se lee mal sobre el video. */
 
 .bg-video-wrap {
@@ -137,16 +136,61 @@ p {
   object-position: center;
 }
 
-@media (min-width: 768px) {
-  .bg-video {
-    object-fit: contain;
-  }
-}
-
 .bg-video-overlay {
   position: absolute;
   inset: 0;
   background: rgba(240, 239, 235, 0.86);
+}
+
+/* BOTÓN DE MÚSICA */
+
+.music-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+  border: 1px solid var(--beige-arena);
+
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+
+  color: var(--verde-oliva);
+  font-size: 1.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.music-toggle:hover {
+  transform: translateY(-2px);
+}
+
+.music-toggle.is-playing {
+  background: var(--verde-salvia);
+  color: white;
+}
+
+.music-toggle.is-playing i {
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* HERO */
@@ -641,6 +685,8 @@ p {
   display: inline-block;
 
   margin-top: 1rem;
+
+  margin-bottom: 1rem;
 
   padding: 14px 32px;
 
