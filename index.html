@@ -68,7 +68,6 @@
       <ul class="navbar-links">
         <li><a href="#story">Historia</a></li>
         <li><a href="#event">Gran Día</a></li>
-        <li><a href="#gallery">Galería</a></li>
         <li><a href="#playlist">Playlist</a></li>
         <li><a href="#rsvp">RSVP</a></li>
       </ul>
@@ -116,7 +115,40 @@
 
     <!-- Nuestra Historia -->
     <section id="story" class="story fade-in">
-      <img src="./assets/historia.jpg" alt="Luciana y Lucas" />
+      <div class="carousel-wrap">
+        <div class="carousel">
+          <button
+            class="carousel__arrow carousel__arrow--prev"
+            aria-label="Anterior"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <div class="carousel__track">
+            <div class="carousel__slide">
+              <img src="./assets/gallery-1.jpeg" alt="Foto pareja 1" />
+            </div>
+            <div class="carousel__slide">
+              <img src="./assets/gallery-2.jpeg" alt="Foto pareja 2" />
+            </div>
+            <div class="carousel__slide">
+              <img src="./assets/gallery-3.jpeg" alt="Foto pareja 3" />
+            </div>
+            <div class="carousel__slide">
+              <img src="./assets/gallery-4.jpeg" alt="Foto pareja 4" />
+            </div>
+          </div>
+
+          <button
+            class="carousel__arrow carousel__arrow--next"
+            aria-label="Siguiente"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="carousel__dots"></div>
+      </div>
 
       <div>
         <h2>Nuestra Historia</h2>
@@ -147,7 +179,7 @@
         <article class="info-card">
           <i class="fa-solid fa-location-dot info-card__icon"></i>
           <h3>Lugar</h3>
-          <p>Las Grutas</p>
+          <p>Complejo Las Piedritas, Las Grutas</p>
         </article>
 
         <article
@@ -164,7 +196,7 @@
 
     <div id="dressCodeModal" class="modal">
       <div class="modal-content">
-        <span class="close" onclick="closeModal('dessCodeModal')">
+        <span class="close" onclick="closeModal('dressCodeModal')">
           &times;
         </span>
 
@@ -228,49 +260,6 @@
 
     <div class="divider"></div>
 
-    <!-- Galería -->
-    <section id="gallery" class="gallery fade-in">
-      <h2>Retratos de nuestro amor</h2>
-      <p>La clave es disfrutar cada momento</p>
-
-      <div class="carousel-wrap">
-        <div class="carousel">
-          <button
-            class="carousel__arrow carousel__arrow--prev"
-            aria-label="Anterior"
-          >
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-
-          <div class="carousel__track">
-            <div class="carousel__slide">
-              <img src="./assets/gallery-1.jpeg" alt="Foto pareja 1" />
-            </div>
-            <div class="carousel__slide">
-              <img src="./assets/gallery-2.jpeg" alt="Foto pareja 2" />
-            </div>
-            <div class="carousel__slide">
-              <img src="./assets/gallery-3.jpeg" alt="Foto pareja 3" />
-            </div>
-            <div class="carousel__slide">
-              <img src="./assets/gallery-4.jpeg" alt="Foto pareja 4" />
-            </div>
-          </div>
-
-          <button
-            class="carousel__arrow carousel__arrow--next"
-            aria-label="Siguiente"
-          >
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
-
-        <div class="carousel__dots"></div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
     <!-- Playlist -->
     <section id="playlist" class="playlist fade-in">
       <h2>🎵 Nuestra Playlist</h2>
@@ -300,6 +289,81 @@
         Queremos bailar las canciones que forman parte de sus historias también.
       </p>
     </section>
+
+    <div class="divider"></div>
+
+    <!-- Tips y Notas -->
+    <section id="tips" class="tips fade-in">
+      <h2>Tips y Notas</h2>
+      <div class="event-grid event-grid--single">
+        <article
+          class="info-card info-card--clickable"
+          onclick="openModal('tipsModal')"
+        >
+          <i class="fa-regular fa-file-lines fa-float info-card__icon"></i>
+          <h3>Tips y Notas</h3>
+          <p>Información adicional que deberías tener en cuenta</p>
+          <small>Ver más</small>
+        </article>
+      </div>
+    </section>
+
+    <div id="tipsModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('tipsModal')"> &times; </span>
+
+        <h2>Tips y Notas</h2>
+
+        <p>
+          •¡Por favor ser puntuales, para vivir esta experiencia desde el
+          inicio!
+        </p>
+
+        <p>•¡Confirmar asistencia a la brevedad, antes del 15 de Octubre!</p>
+
+        <p>•Acordáte que es en la playa, llevar calzado cómodo 😉</p>
+
+        <p>•Carga bien el celu 🔋 antes de asistir</p>
+
+        <p>•Disfrutar al máximo esta experiencia!!!</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Regalos -->
+    <section id="gifts" class="gifts fade-in">
+      <h2>Regalos</h2>
+
+      <div class="event-grid event-grid--single">
+        <article
+          class="info-card info-card--clickable"
+          onclick="openModal('giftsModal')"
+        >
+          <i class="fa-solid fa-gift info-card__icon"></i>
+          <h3>Regalos</h3>
+          <p>Si quieres darnos algo más que tu hermosa presencia...</p>
+          <small>Ver más</small>
+        </article>
+      </div>
+    </section>
+
+    <div id="giftsModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('giftsModal')"> &times; </span>
+
+        <h2>Regalos</h2>
+
+        <p>
+          Tu presencia es nuestro mejor regalo. Si además querés hacernos llegar
+          un gesto para empezar esta nueva etapa, dejamos nuestros datos por
+          acá.
+        </p>
+
+        <p><strong>Alias:</strong> luciana.lucas.boda</p>
+        <p><strong>CBU:</strong> 0000000000000000000000</p>
+      </div>
+    </div>
 
     <div class="divider"></div>
 
