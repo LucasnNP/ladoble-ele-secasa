@@ -170,11 +170,32 @@
           <p>27/11/2026</p>
         </article>
 
-        <article class="info-card">
+        <article
+          class="info-card info.card--clickable"
+          onclick="openModal('itineraryModal')"
+        >
           <i class="fa-regular fa-clock info-card__icon"></i>
           <h3>Hora</h3>
           <p>Próximamente</p>
+          <small>Ver itinerario</small>
         </article>
+
+        <div id="itineraryModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('itineraryModal')">
+              &times;
+            </span>
+
+            <h2>Itinerario</h2>
+
+            <div class="itinerary">
+              <img
+                src="./assets/dress-code-semiformal.jpeg"
+                alt="Dress code semi formal"
+              />
+            </div>
+          </div>
+        </div>
 
         <article class="info-card">
           <i class="fa-solid fa-location-dot info-card__icon"></i>
@@ -364,7 +385,7 @@
           quienes quieran tenerlos a mano:
         </p>
 
-        <p><strong>Alias:</strong> ladoble.ele.secasa.mp</p>
+        <p><strong>Alias:</strong> ladoble.ele.secasa</p>
         <p><strong>CVU:</strong> 0000003100015905044493</p>
       </div>
     </div>
