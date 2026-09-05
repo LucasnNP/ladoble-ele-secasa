@@ -17,6 +17,15 @@
     <title>Luciana & Lucas | 27 Noviembre 2026</title>
   </head>
   <body>
+    <!-- Pantalla de bienvenida personalizada: aparece si el link tiene ?nombre=...
+         cierra sola o al tocarla-->
+    <div id="welcomeOverlay" class="welcome-overlay">
+      <div class="welcome-overlay__content">
+        <p id="welcomeGreetingText" class="welcome-overlay__greeting"></p>
+        <p class="welcome-overlay__hint">Toca para ver la invitación</p>
+      </div>
+    </div>
+
     <!-- Video de fondo -->
     <div class="bg-video-wrap">
       <video
@@ -88,7 +97,7 @@
     <div class="divider"></div>
 
     <!-- Contador regresivo -->
-    <section id="countdown" class="countdown">
+    <section id="countdown" class="countdown fade-in">
       <h2>Nos vemos en</h2>
       <div class="countdown-container">
         <div>

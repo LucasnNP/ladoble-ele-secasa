@@ -28,6 +28,35 @@ updateCountdown();
 
 setInterval(updateCountdown, 1000);
 
+// Pantalla de bienvenida personalizada
+const welcomeOverlay = document.getElementById("welcomeOverlay");
+const welcomeGreetingText = document.getElementById("welcomeGreetingText");
+
+if (welcomeOverlay && welcomeGreetingText) {
+  const params = new URLSearchParams(window.location.search);
+  const nombre = params.get("nombre");
+
+  if (nombre) {
+    const nombreLimpio = decodeURIComponent(nombre).trim();
+    welcomeGreetingText.textContent = `¡Hola, ${nombreLimpio}!`;
+
+    document.body.style.overflow = "hidden";
+
+    const hideWelcomeOverlay = () => {
+      welcomeOverlay.classList.add("is-hidden");
+      document.body.style.overflow = "";
+    };
+
+    welcomeOverlay.addEventListener("click", hideWelcomeOverlay);
+
+    // Se cierra sola a los 10 segundos si nadie la toca antes
+    setTimeout(hideWelcomeOverlay, 10000);
+  } else {
+    // Sin el nombre en el línk accede directamente a la tajeta
+    welcomeOverlay.remove();
+  }
+}
+
 // Modales genéricos (Dress Code, Regalos, etc.)
 function openModal(modalId) {
   document.getElementById(modalId).style.display = "block";
@@ -114,6 +143,30 @@ function initCarousel() {
 }
 
 initCarousel();
+
+// Animación al hacer scroll: cuando un elemento con clase .fade-in entra
+// en pantalla le agrega .is-visible.
+// Nativo del navegador, sin librería
+const revealEls = document.querySelectorAll(".fade-in");
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target); // se anima una sola vez
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+
+  revealEls.forEach((el) => revealObserver.observe(el));
+} else {
+  // Navegadores muy viejos sin soporte: mostrar todo directo
+  revealEls.forEach((el) => el.classList.add("is-visible"));
+}
 
 // Botón de música de fondo — no autoplay, arranca con el primer toque
 // del usuario (los navegadores bloquean el sonido automático).

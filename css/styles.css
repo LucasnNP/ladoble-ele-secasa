@@ -130,8 +130,7 @@ p {
   height: 100%;
   /* El video es vertical (formato historia de celular). En mobile, "cover"
      llena la pantalla sin recortar de más porque las proporciones son
-     parecidas. En pantallas anchas (desktop) usamos "contain" para que
-     no se vea gigante ni recortado — ver media query más abajo. */
+     parecidas. */
   object-fit: cover;
   object-position: center;
 }
@@ -232,6 +231,66 @@ p {
   font-size: 0.9rem;
   letter-spacing: 2px;
   color: var(--verde-salvia);
+}
+
+.guest-greeting {
+  display: none;
+}
+
+/* PANTALLA DE BIENVENIDA PERSONALIZADA */
+
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  padding: 2rem;
+
+  background: var(--cloud-dancer);
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
+}
+
+.welcome-overlay.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.welcome-overlay__greeting {
+  font-family: var(--title-font);
+  font-size: 2.6rem;
+  font-style: italic;
+  color: var(--verde-oliva);
+  margin-bottom: 1rem;
+}
+
+.welcome-overlay__hint {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--verde-salvia);
+
+  animation: pulseHint 2s ease-in-out infinite;
+}
+
+@keyframes pulseHint {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 /* CONTADOR */
@@ -758,17 +817,33 @@ p {
   background: var(--verde-salvia);
 }
 
+/* ANIMACIÓN AL HACER SCROLL (comandado en app.js por IntersectionObserver) */
+
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease forwards;
+  transform: translateY(40px);
+  transition:
+    opacity 1.6s ease,
+    transform 1.6s ease;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efecto cascada */
+.event-grid .info-card:nth-child(1) {
+  transition-delay: 0s;
+}
+.event-grid .info-card:nth-child(2) {
+  transition-delay: 0.12s;
+}
+.event-grid .info-card:nth-child(3) {
+  transition-delay: 0.24s;
+}
+.event-grid .info-card:nth-child(4) {
+  transition-delay: 0.36s;
 }
 
 /* DESKTOP */
