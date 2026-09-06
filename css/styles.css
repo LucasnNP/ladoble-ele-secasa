@@ -293,6 +293,10 @@ p {
   }
 }
 
+.animation {
+  animation: pulseHint 2s ease-in-out infinite;
+}
+
 /* CONTADOR */
 
 .countdown {
